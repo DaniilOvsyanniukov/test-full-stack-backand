@@ -51,7 +51,7 @@ router.delete('/:memberId', async (req, res, next) => {
     res.status(404)
     res.json({ message: 'Not found' })
   }
-  const members = await listFamily(member[0].owner)
+  const members = await listFamily(member.pop().owner)
   res.status(200)
   res.json(members)
 })
